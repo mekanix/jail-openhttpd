@@ -1,0 +1,13 @@
+chroot "/usr/local/www"
+logdir "/var/log/obhttpd"
+
+server "default" {
+	listen on * port 80
+	location "/.well-known/acme-challenge/*" {
+		root "/acme"
+		request strip 2
+	}
+	location * {
+		block return 302 "https://$HTTP_HOST$REQUEST_URI"
+	}
+}

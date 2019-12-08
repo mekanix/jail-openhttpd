@@ -1,0 +1,3 @@
+---
+openhttpd_packages:
+  - name: obhttpd

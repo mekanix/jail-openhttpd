@@ -1,0 +1,5 @@
+---
+- name: restart openhttpd
+  service:
+    name: obhttpd
+    state: restarted
